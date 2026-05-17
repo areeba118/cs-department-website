@@ -11,6 +11,7 @@ jobs:
     name: Deploy to Development
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
+    environment: development
     steps:
       - name: Trigger Vercel Development Deployment
         run: |
