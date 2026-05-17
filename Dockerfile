@@ -1,11 +1,11 @@
-# Use the official lightweight Nginx image based on Alpine Linux
+# Use the official lightweight Nginx web server image
 FROM nginx:alpine
 
-# Copy the static website files from the local public directory into the Nginx server directory
+# Copy your public folder directory contents straight into Nginx's HTML deployment directory
 COPY ./public /usr/share/nginx/html
 
-# Expose port 80 to allow incoming web traffic to the container
+# Expose port 80 to route incoming web traffic
 EXPOSE 80
 
-# Run Nginx in the foreground so the container stays active
+# Start the Nginx web server process in the foreground
 CMD ["nginx", "-g", "daemon off;"]
